@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brosur Mebel Mewah - Kursi, Meja & Sofa</title>
+    <style>
+        /* ===== RESET & GLOBAL ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', 'Georgia', serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #2c1810 0%, #1a0f0a 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* ===== VARIABEL WARNA ===== */
+        :root {
+            --maroon: #6b1e2e;
+            --maroon-dark: #4a1420;
+            --gold: #d4af37;
+            --gold-light: #f4e4a6;
+            --cream: #f5f0e8;
+            --cream-dark: #e8dfd0;
+            --emerald: #1a5c4a;
+            --emerald-light: #2d8a6e;
+            --brown: #3d2817;
+            --text-dark: #2c1810;
+            --text-gray: #7a6a5a;
+            --white: #ffffff;
+        }
+
+        /* ===== CONTAINER BROSUR ===== */
+        .brochure {
+            width: 310px;
+            height: 530px;
+            background: var(--cream);
+            border-radius: 8px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 
+                        0 0 0 1px rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .brochure:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(212, 175, 55, 0.4),
+                        0 0 0 2px var(--gold);
+        }
+
+        /* ===== TIPOGRAFI ===== */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 10px;
+            line-height: 1.6;
+            color: var(--text-gray);
+        }
+
+        .text-gold { color: var(--gold); }
+        .text-maroon { color: var(--maroon); }
+        .text-white { color: var(--white); }
+
+        /* Ornamen divider */
+        .divider-ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 8px 0;
+        }
+
+        .divider-ornament .line {
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .divider-ornament .diamond {
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            transform: rotate(45deg);
+        }
+
+        /* ============================================
+           LAYOUT 1 - "ROYAL FURNITURE" (Kiri)
+           Tema: Klasik & Mewah
+           ============================================ */
+        .layout-1 {
+            background: var(--cream);
+        }
+
+        .layout-1 .hero {
+            background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-dark) 100%);
+            padding: 25px 20px;
+            height: 42%;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .layout-1 .hero::before {
+            content: '❦';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 40px;
+            color: var(--gold);
+            opacity: 0.2;
+        }
+
+        .layout-1 .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: -40px;
+            width: 120px;
+            height: 120px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            opacity: 0.15;
+        }
+
+        .layout-1 .hero .crown {
+            font-size: 24px;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .layout-1 .hero h1 {
+            font-size: 24px;
+            color: var(--white);
+            line-height: 1.2;
+            font-style: italic;
+        }
+
+        .layout-1 .hero h1 span {
+            color: var(--gold);
+            display: block;
+            font-size: 28px;
+        }
+
+        .layout-1 .hero .tagline {
+            font-size: 9px;
+            color: var(--gold-light);
+            margin-top: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .layout-1 .content {
+            padding: 20px;
+            height: 43%;
+            text-align: center;
+        }
+
+        .layout-1 .content .furniture-icon {
+            font-size: 45px;
+            margin-bottom: 8px;
+            filter: drop-shadow(0 4px 6px rgba(107, 30, 46, 0.3));
+        }
+
+        .layout-1 .content h3 {
+            font-size: 15px;
+            color: var(--maroon);
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .layout-1 .content p {
+            font-size: 9px;
+            color: var(--text-gray);
+            margin-bottom: 12px;
+            padding: 0 10px;
+        }
+
+        .layout-1 .content .material-tags {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .layout-1 .content .material-tags span {
+            background: var(--cream-dark);
+            color: var(--maroon);
+            font-size: 8px;
+            padding: 4px 10px;
+            border-radius: 2px;
+            font-weight: 600;
+            border: 1px solid var(--gold);
+            font-family: 'Segoe UI', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .layout-1 .footer {
+            background: var(--maroon-dark);
+            padding: 12px 20px;
+            height: 15%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid var(--gold);
+        }
+
+        .layout-1 .footer .price {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .layout-1 .footer .price small {
+            font-size: 8px;
+            color: rgba(255,255,255,0.6);
+            font-weight: 400;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .layout-1 .footer .order {
+            background: var(--gold);
+            color: var(--maroon-dark);
+            font-size: 9px;
+            font-weight: 700;
+            padding: 7px 14px;
+            border-radius: 2px;
+            font-family: 'Segoe UI', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        /* ============================================
+           LAYOUT 2 - "ELEGANT LIVING" (Tengah Kiri)
+           Tema: Modern & Minimalis
+           ============================================ */
+        .layout-2 {
+            background: var(--white);
+        }
+
+        .layout-2 .header {
+            background: var(--emerald);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .layout-2 .header .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .layout-2 .header .brand-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: var(--emerald);
+            font-weight: 700;
+        }
+
+        .layout-2 .header .brand h3 {
+            font-size: 13px;
+            color: var(--white);
+            line-height: 1.2;
+            font-style: italic;
+        }
+
+        .layout-2 .header .brand h3 span {
+            color: var(--gold);
+            display: block;
+            font-size: 7px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Segoe UI', sans-serif;
+            font-style: normal;
+        }
+
+        .layout-2 .header .est {
+            font-size: 8px;
+            color: var(--gold);
+            font-family: 'Segoe UI', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .layout-2 .main {
+            padding: 18px 20px;
+            height: calc(100% - 68px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .layout-2 .main .title-section {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .layout-2 .main .title-section h2 {
+            font-size: 18px;
+            color: var(--emerald);
+            font-style: italic;
+        }
+
+        .layout-2 .main .title-section h2 span {
+            color: var(--gold);
+            font-style: normal;
+        }
+
+        .layout-2 .main .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .layout-2 .main .product-card {
+            background: var(--cream);
+            border-radius: 6px;
+            padding: 12px 10px;
+            text-align: center;
+            border: 1px solid var(--cream-dark);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .layout-2 .main .product-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+        }
+
+        .layout-2 .main .product-card .icon {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        .layout-2 .main .product-card h4 {
+            font-size: 10px;
+            color: var(--emerald);
+            margin-bottom: 3px;
+            font-style: italic;
+        }
+
+        .layout-2 .main .product-card .price-tag {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--maroon);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .layout-2 .main .product-card .material {
+            font-size: 7px;
+            color: var(--text-gray);
+            font-family: 'Segoe UI', sans-serif;
+            margin-top: 3px;
+        }
+
+        .layout-2 .main .info-footer {
+            margin-top: 12px;
+            background: var(--emerald);
+            color: var(--white);
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 8px;
+            font-family: 'Segoe UI', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .layout-2 .main .info-footer strong {
+            color: var(--gold);
+        }
+
+        /* ============================================
+           LAYOUT 3 - "LUXURY COLLECTION" (Tengah Kanan)
+           Tema: Premium & Eksklusif
+           ============================================ */
+        .layout-3 {
+            background: var(--maroon-dark);
+        }
+
+        .layout-3 .top-bar {
+            background: var(--gold);
+            padding: 8px 20px;
+            text-align: center;
+        }
+
+        .layout-3 .top-bar p {
+            font-size: 8px;
+            color: var(--maroon-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .layout-3 .header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .layout-3 .header .diamond-icon {
+            font-size: 28px;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        .layout-3 .header h1 {
+            font-size: 22px;
+            color: var(--white);
+            line-height: 1.2;
+            font-style: italic;
+        }
+
+        .layout-3 .header h1 span {
+            color: var(--gold);
+            display: block;
+            font-size: 24px;
+        }
+
+        .layout-3 .header .tagline {
+            font-size: 8px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 8px;
+            font-style: italic;
+            letter-spacing: 2px;
+        }
+
+        .layout-3 .main-content {
+            padding: 20px;
+        }
+
+        .layout-3 .main-content .image-box {
+            width: 100%;
+            height: 130px;
+            background: linear-gradient(135deg, #3d2817 0%, #2c1810 100%);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 55px;
+            margin-bottom: 15px;
+            border: 2px solid var(--gold);
+            position: relative;
+        }
+
+        .layout-3 .main-content .image-box::before {
+            content: '★';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            width: 28px;
+            height: 28px;
+            background: var(--gold);
+            color: var(--maroon-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .layout-3 .main-content .image-box::after {
+            content: 'PREMIUM';
+            position: absolute;
+            bottom: -8px;
+            right: -8px;
+            background: var(--gold);
+            color: var(--maroon-dark);
+            font-size: 7px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 2px;
+            letter-spacing: 2px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .layout-3 .main-content .info-list {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+
+        .layout-3 .main-content .info-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 9px;
+            color: rgba(255,255,255,0.8);
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .layout-3 .main-content .info-list li .check {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 11px;
+        }
+
+        .layout-3 .main-content .contact-box {
+            background: var(--gold);
+            border-radius: 4px;
+            padding: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .layout-3 .main-content .contact-box .info h4 {
+            font-size: 11px;
+            color: var(--maroon-dark);
+            font-style: italic;
+        }
+
+        .layout-3 .main-content .contact-box .info p {
+            font-size: 8px;
+            color: var(--maroon-dark);
+            opacity: 0.8;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .layout-3 .main-content .contact-box .wa-btn {
+            background: var(--maroon-dark);
+            color: var(--gold);
+            font-size: 9px;
+            font-weight: 700;
+            padding: 8px 14px;
+            border-radius: 2px;
+            font-family: 'Segoe UI', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .layout-3 .footer-note {
+            text-align: center;
+            padding: 10px;
+            font-size: 7px;
+            color: rgba(255,255,255,0.4);
+            font-family: 'Segoe UI', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        /* ============================================
+           LAYOUT 4 - "CLASSIC HERITAGE" (Kanan)
+           Tema: Vintage & Berkelas
+           ============================================ */
+        .layout-4 {
+            background: var(--cream);
+        }
+
+        .layout-4 .ornament-top {
+            height: 8px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--gold) 0px,
+                var(--gold) 10px,
+                var(--maroon) 10px,
+                var(--maroon) 20px
+            );
+        }
+
+        .layout-4 .header {
+            background: var(--maroon);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .layout-4 .header::before {
+            content: '❦';
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            font-size: 50px;
+            color: var(--gold);
+            opacity: 0.15;
+        }
+
+        .layout-4 .header::after {
+            content: '❦';
+            position: absolute;
+            bottom: -10px;
+            right: 15px;
+            font-size: 50px;
+            color: var(--gold);
+            opacity: 0.15;
+            transform: rotate(180deg);
+        }
+
+        .layout-4 .header .crest {
+            font-size: 26px;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        .layout-4 .header h1 {
+            font-size: 20px;
+            color: var(--white);
+            line-height: 1.2;
+            font-style: italic;
+        }
+
+        .layout-4 .header h1 span {
+            color: var(--gold);
+        }
+
+        .layout-4 .header .divider-ornament .line {
+            background: var(--gold);
+        }
+
+        .layout-4 .header .est {
+            font-size: 8px;
+            color: var(--gold-light);
+            letter-spacing: 3px;
+            font-family: 'Segoe UI', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .layout-4 .main-content {
+            padding: 20px;
+        }
+
+        .layout-4 .main-content .showcase {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .layout-4 .main-content .showcase .image-box {
+            width: 45%;
+            height: 120px;
+            background: var(--cream-dark);
+            border: 2px solid var(--gold);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            position: relative;
+        }
+
+        .layout-4 .main-content .showcase .image-box::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            border: 1px solid var(--maroon);
+            border-radius: 2px;
+            pointer-events: none;
+        }
+
+        .layout-4 .main-content .showcase .details {
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .layout-4 .main-content .showcase .details h3 {
+            font-size: 14px;
+            color: var(--maroon);
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .layout-4 .main-content .showcase .details .price {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 8px;
+        }
+
+        .layout-4 .main-content .showcase .details p {
+            font-size: 8px;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        .layout-4 .main-content .collection-list {
+            list-style: none;
+            margin-bottom: 12px;
+        }
+
+        .layout-4 .main-content .collection-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 9px;
+            color: var(--text-dark);
+            padding: 5px 0;
+            border-bottom: 1px dashed var(--cream-dark);
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .layout-4 .main-content .collection-list li .bullet {
+            color: var(--gold);
+            font-size: 10px;
+        }
+
+        .layout-4 .main-content .cta-box {
+            background: var(--maroon);
+            border-radius: 4px;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid var(--gold);
+        }
+
+        .layout-4 .main-content .cta-box h4 {
+            font-size: 11px;
+            color: var(--gold);
+            font-style: italic;
+            margin-bottom: 3px;
+        }
+
+        .layout-4 .main-content .cta-box p {
+            font-size: 9px;
+            color: var(--white);
+            font-family: 'Segoe UI', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .layout-4 .footer-note {
+            text-align: center;
+            padding: 8px;
+            font-size: 7px;
+            color: var(--text-gray);
+            font-family: 'Segoe UI', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .layout-4 .ornament-bottom {
+            height: 8px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--maroon) 0px,
+                var(--maroon) 10px,
+                var(--gold) 10px,
+                var(--gold) 20px
+            );
+        }
+
+        /* ===== ANIMASI ===== */
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .shimmer {
+            background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1400px) {
+            body {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         LAYOUT 1 - ROYAL FURNITURE
+         ============================================ -->
+    <div class="brochure layout-1" onclick="showDetail('Royal Furniture', 'Sofa Kulit Mewah', 'Rp 25.000.000')">
+        <div class="hero">
+            <div class="crown float">♛</div>
+            <h1>ROYAL<span>FURNITURE</span></h1>
+            <p class="tagline">Luxury Collection</p>
+        </div>
+        <div class="content">
+            <div class="furniture-icon">🛋️</div>
+            <h3>Sofa Kulit Mewah</h3>
+            <p>Kulit asli Italia dengan rangka kayu jati solid. Dikerjakan tangan oleh pengrajin ahli.</p>
+            <div class="material-tags">
+                <span>Kulit Italia</span>
+                <span>Kayu Jati</span>
+                <span>Handmade</span>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="price">Rp 25.000.000 <small>Negotiable</small></div>
+            <div class="order">PESAN</div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         LAYOUT 2 - ELEGANT LIVING
+         ============================================ -->
+    <div class="brochure layout-2" onclick="showDetail('Elegant Living', 'Koleksi Mebel Modern', 'Mulai Rp 5.000.000')">
+        <div class="header">
+            <div class="brand">
+                <div class="brand-icon">E</div>
+                <h3>ELEGANT LIVING<span>Fine Furniture</span></h3>
+            </div>
+            <div class="est">EST. 2005</div>
+        </div>
+        <div class="main">
+            <div class="title-section">
+                <h2>KOLEKSI <span>TERBARU</span></h2>
+                <div class="divider-ornament">
+                    <div class="line"></div>
+                    <div class="diamond"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="icon">🪑</div>
+                    <h4>Kursi Dining</h4>
+                    <div class="price-tag">Rp 2.500.000</div>
+                    <div class="material">Kayu Mahoni</div>
+                </div>
+                <div class="product-card">
+                    <div class="icon">🛋️</div>
+                    <h4>Sofa 3 Seat</h4>
+                    <div class="price-tag">Rp 8.500.000</div>
+                    <div class="material">Fabric Premium</div>
+                </div>
+                <div class="product-card">
+                    <div class="icon">🪑</div>
+                    <h4>Kursi Kerja</h4>
+                    <div class="price-tag">Rp 1.800.000</div>
+                    <div class="material">Leather</div>
+                </div>
+                <div class="product-card">
+                    <div class="icon">🛏️</div>
+                    <h4>Meja Tamu</h4>
+                    <div class="price-tag">Rp 3.200.000</div>
+                    <div class="material">Marmer</div>
+                </div>
+            </div>
+            <div class="info-footer">
+                📍 Jl. Sudirman No. 88, Padang | <strong>Buka 09.00 - 21.00 WIB</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         LAYOUT 3 - LUXURY COLLECTION
+         ============================================ -->
+    <div class="brochure layout-3" onclick="showDetail('Luxury Collection', 'Meja Makan Marmer Eksklusif', 'Rp 45.000.000')">
+        <div class="top-bar">
+            <p>✦ Exclusive Premium Collection ✦</p>
+        </div>
+        <div class="header">
+            <div class="diamond-icon">◆</div>
+            <h1>LUXURY<span>COLLECTION</span></h1>
+            <div class="divider-ornament">
+                <div class="line"></div>
+                <div class="diamond"></div>
+                <div class="line"></div>
+            </div>
+            <p class="tagline">Timeless Elegance</p>
+        </div>
+        <div class="main-content">
+            <div class="image-box">🪑</div>
+            <ul class="info-list">
+                <li><span class="check">✓</span> Marmer asli Carrara Italia</li>
+                <li><span class="check">✓</span> Rangka kuningan berlapis emas</li>
+                <li><span class="check">✓</span> Custom design sesuai keinginan</li>
+                <li><span class="check">✓</span> Garansi 5 tahun</li>
+            </ul>
+            <div class="contact-box">
+                <div class="info">
+                    <h4>Konsultasi Gratis</h4>
+                    <p>0812-3456-7890</p>
+                </div>
+                <div class="wa-btn">💬 WhatsApp</div>
+            </div>
+        </div>
+        <div class="footer-note">
+            © 2024 Luxury Collection - Padang, Sumatera Barat
+        </div>
+    </div>
+
+    <!-- ============================================
+         LAYOUT 4 - CLASSIC HERITAGE
+         ============================================ -->
+    <div class="brochure layout-4" onclick="showDetail('Classic Heritage', 'Set Kursi Tamu Klasik', 'Rp 18.000.000')">
+        <div class="ornament-top"></div>
+        <div class="header">
+            <div class="crest float">❦</div>
+            <h1>CLASSIC<span>HERITAGE</span></h1>
+            <div class="divider-ornament">
+                <div class="line"></div>
+                <div class="diamond"></div>
+                <div class="line"></div>
+            </div>
+            <p class="est">Since 1998</p>
+        </div>
+        <div class="main-content">
+            <div class="showcase">
+                <div class="image-box">🛋️</div>
+                <div class="details">
+                    <h3>Set Kursi Tamu Klasik</h3>
+                    <div class="price">Rp 18.000.000</div>
+                    <p>Ukiran tangan khas Minang dengan kayu jati tua. Dilengkapi bantal sutra premium.</p>
+                </div>
+            </div>
+            <ul class="collection-list">
+                <li><span class="bullet">◆</span> Kursi Tamu Ukir Minang</li>
+                <li><span class="bullet">◆</span> Meja Kopi Marmer</li>
+                <li><span class="bullet">◆</span> Sofa Kulit Klasik</li>
+                <li><span class="bullet">◆</span> Lemari Hias Antik</li>
+            </ul>
+            <div class="cta-box">
+                <h4>Kunjungi Showroom Kami</h4>
+                <p>📍 Jl. Veteran No. 123, Padang</p>
+            </div>
+        </div>
+        <div class="footer-note">
+            © 2024 Classic Heritage Furniture - Padang
+        </div>
+        <div class="ornament-bottom"></div>
+    </div>
+
+    <script>
+        function showDetail(namaToko, produk, harga) {
+            alert(
+                '🏛️ ' + namaToko + '\n' +
+                '🪑 ' + produk + '\n' +
+                '💰 ' + harga + '\n\n' +
+                'Terima kasih telah melihat brosur kami!\n' +
+                'Hubungi: 0812-3456-7890\n' +
+                'Showroom: Jl. Veteran No. 123, Padang'
+            );
+        }
+
+        // Animasi masuk saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            const brochures = document.querySelectorAll('.brochure');
+            brochures.forEach((brochure, index) => {
+                brochure.style.opacity = '0';
+                brochure.style.transform = 'translateY(40px) rotateX(10deg)';
+                setTimeout(() => {
+                    brochure.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                    brochure.style.opacity = '1';
+                    brochure.style.transform = 'translateY(0) rotateX(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+
+</body>
+</html>
